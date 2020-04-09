@@ -11,6 +11,20 @@
 
  -Add store list container Done
 
- -Add individual store
+ -Add individual store Done
+
+ ..............DONE.......................
+ 
+ -Style individual store item in store list Done
+
+ -Show all the stores in the store list based on real world data
+
+ - Show Marker based on real world store data
+
+ - Show th info window when you click on the individual store
+
+ -Add a beautiful transition on the hover of the individual store 
+
+
 
 
