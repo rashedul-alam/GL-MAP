@@ -17,13 +17,13 @@
  
  -Style individual store item in store list Done
 
- -Show all the stores in the store list based on real world data
+ -Show all the stores in the store list based on real world data Done
 
- - Show Marker based on real world store data
+ - Show Marker based on real world store data Done
 
- - Show th info window when you click on the individual store
+ - Show th info window when you click on the individual store Done
 
- -Add a beautiful transition on the hover of the individual store 
+ -Add a beautiful transition on the hover of the individual store  XXXXX
 
 
 
