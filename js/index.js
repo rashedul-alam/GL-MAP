@@ -1,5 +1,7 @@
 window.onload = () => {
+
     displayStores();
+    setOnClickListener();
 }
 
 
@@ -19,7 +21,37 @@ function initMap() {
 
     });
     infoWindow = new google.maps.InfoWindow();
+    displayStores();
     showStoreMarkers();
+
+
+}
+
+function searchStore() {
+    var zipCode = document.getElementById('zip-code-input').value;
+    var foundStores = [];
+
+    for (var store of stores) {
+        var postal = store['address']['postalCode'].substring(0, 5);
+        if (postal == zipCode) {
+            foundStores.push(store);
+        }
+    }
+    console.log(foundStores);
+}
+
+
+
+function setOnClickListener() {
+    var storeElements = document.querySelectorAll('.store-container');
+    console.log(storeElements);
+    storeElements.forEach(function(elem, index) {
+        console.log(index);
+        elem.addEventListener('click', function() {
+            new google.maps.event.trigger(markers[index], 'click');
+
+        })
+    })
 
 }
 
@@ -76,27 +108,33 @@ function showStoreMarkers() {
 
 
 function createMarker(latlng, name, open, address, phone, index) {
-    // var html = "<b>" + name + "</b> <br/>" + open + "</b> <br/><hr>" + address + "</b> <br/>" + phone;
-    var html = '<div id="content">' +
-        '<div id="siteNotice">' +
-        '</div>' +
-        '<h1 id="firstHeading" class="firstHeading">Uluru</h1>' +
-        '<div id="bodyContent">' +
-        '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-        'sandstone rock formation in the southern part of the ' +
-        'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) ' +
-        'south west of the nearest large town, Alice Springs; 450&#160;km ' +
-        '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major ' +
-        'features of the Uluru - Kata Tjuta National Park. Uluru is ' +
-        'sacred to the Pitjantjatjara and Yankunytjatjara, the ' +
-        'Aboriginal people of the area. It has many springs, waterholes, ' +
-        'rock caves and ancient paintings. Uluru is listed as a World ' +
-        'Heritage Site.</p>' +
-        '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
-        'https://en.wikipedia.org/w/index.php?title=Uluru</a> ' +
-        '(last visited June 22, 2009).</p>' +
-        '</div>' +
-        '</div>';
+    var html = `
+     <div class="store-info-window">
+        <div class="store-info-name">
+            ${name}
+        </div>
+        <div class="store-info-status">
+        ${open}
+        </div>
+        <div class="store-info-address">
+            <div class="circle">
+                <i class="fas fa-location-arrow"></i>
+            </div>
+            
+            ${address}
+        </div>
+        <div class="store-info-phone">
+            <div class="circle">
+                <i class="fas fa-phone"></i>
+            </div>
+            
+            ${phone}
+        </div>
+        
+
+     </div>    
+     `;
+
     var marker = new google.maps.Marker({
         map: map,
         position: latlng,
