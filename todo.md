@@ -22,14 +22,14 @@
  - Show Marker based on real world store data Done
 
  - Show th info window when you click on the individual store Done
- .................Done...............
+ .................Done............
 
  -complete the marker 
  -make over info window
  -complete search bar
  -add hover effect in list
 
- -Add a beautiful transition on the hover of the individual store  XXXXX
+ -Add a beautiful transition on the hover of the individual store 
 
 
 
