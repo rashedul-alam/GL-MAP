@@ -24,12 +24,12 @@
  - Show th info window when you click on the individual store Done
  .................Done............
 
- -complete the marker 
- -make over info window
- -complete search bar
- -add hover effect in list
+ -complete the marker done
+ -make over info window done
+ -complete search bar done
+ -add hover effect in list done
 
- -Add a beautiful transition on the hover of the individual store 
+ -Add a beautiful transition on the hover of the individual store  done
 
 
 
